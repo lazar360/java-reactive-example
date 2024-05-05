@@ -1,3 +1,8 @@
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 public class Exercise1 {
 
     public static void main(String[] args) {
@@ -45,5 +50,12 @@ public class Exercise1 {
                 .map(User::getFirstName)
                 .forEach(System.out::println);
 
+        // Print int
+        System.out.println("Print result for i += result - range i = 1 to 10");
+        System.out.println(IntStream.range(1,10).sum());
+
+        // Print int
+        System.out.println("Print result for i *= result - range i = 1 to 10");
+        System.out.println(IntStream.range(1, 4).reduce(1, (a, b) -> a * b));
     }
 }
