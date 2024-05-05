@@ -1,6 +1,9 @@
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -58,5 +61,23 @@ public class Exercise1 {
         // Print int
         System.out.println("Print result for i *= result - range i = 1 to 10");
         System.out.println(IntStream.range(1, 4).reduce(1, (a, b) -> a * b));
+
+        // Print list
+        List<String> names = new ArrayList<>();
+        names.addAll(new ArrayList<>(Arrays.asList("Arold", "Eric", "Fred")));
+        System.out.println(names);
+        names.add("Arnaud");
+        System.out.println(names);
+
+        // Print String
+        List<String> listNamesStartWithA = names.stream()
+                .filter(namesStartWithA -> namesStartWithA.startsWith("A"))
+                .map(String::toUpperCase)
+                .toList();
+        System.out.println("listNamesStartWithA= " + listNamesStartWithA);
+        String namesWithA = names.stream()
+                .filter(namesStartWithA -> namesStartWithA.startsWith("A"))
+                .collect(Collectors.joining(", "));
+        System.out.println("namesWithA= "+ namesWithA);
     }
 }
