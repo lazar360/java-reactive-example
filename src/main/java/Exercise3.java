@@ -8,7 +8,11 @@ public class Exercise3 {
 
         // Get all numbers in the ReactiveSources.intNumbersFlux stream
         // To put them into a liste and print the list and its size
-        List<Integer> numbers = ReactiveSources.intNumbersFlux().toStream().toList();
+        List<Integer> numbers = ReactiveSources
+                .intNumbersFlux()
+                .log()
+                .toStream()
+                .toList();
         System.out.println("list= " + numbers);
         System.out.println("list.size()= " + numbers.size());
     }

@@ -63,8 +63,7 @@ public class Exercise1 {
         System.out.println(IntStream.range(1, 4).reduce(1, (a, b) -> a * b));
 
         // Print list
-        List<String> names = new ArrayList<>();
-        names.addAll(new ArrayList<>(Arrays.asList("Arold", "Eric", "Fred")));
+        List<String> names = new ArrayList<>(new ArrayList<>(Arrays.asList("Arold", "Eric", "Fred")));
         System.out.println(names);
         names.add("Arnaud");
         System.out.println(names);
