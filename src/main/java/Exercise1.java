@@ -57,6 +57,11 @@ public class Exercise1 {
         // Print int
         System.out.println("Print result for i += result - range i = 1 to 10");
         System.out.println(IntStream.range(1,10).sum());
+        IntStream.range(1,10)
+                 .reduce(0, (a,b)-> {
+                     System.out.println("a+b= " + (a+b));
+                     return a+b;
+                 });
 
         // Print int
         System.out.println("Print result for i *= result - range i = 1 to 10");
